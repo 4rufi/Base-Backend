@@ -1,5 +1,15 @@
-# WebServer + RestServer
+## Installation
 
-Se debe ejecutar `npm install`para reconstruir los módulos de Node
+```sh
+$ npm install
+```
 
-You need execute `npm install` for reestructuring node module
+## Usage
+
+```sh
+$ npm run start
+```
+
+## License
+
+ISC © [Andy Au]()
