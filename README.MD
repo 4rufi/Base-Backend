@@ -6,7 +6,15 @@ $ npm install
 
 ## Usage
 
-you need configure your mongodb access and run start command
+you need configure environment
+
+```sh
+PORT=
+MONGODB_CNN=
+SECRET_KEY=
+```
+
+and run start command
 
 ```sh
 $ npm run start
@@ -14,4 +22,4 @@ $ npm run start
 
 ## License
 
-ISC © [Andy Au]()
+ISC © [Andy Au](https://github.com/4rufi/Base-Backend)

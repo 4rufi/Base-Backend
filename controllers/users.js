@@ -1,6 +1,6 @@
 const { response } = require('express');
 const User = require('../models/user');
-const { hash } = require('../utils/crypto');
+const { hash } = require('../helpers/crypto');
 
 const getUser = async (req, res = response) => {
   const { limit = 5, from = 0 } = req.query;
@@ -38,9 +38,6 @@ const patchUser = (req, res = response) => {
 
 const deleteUser = async (req, res = response) => {
   const { id } = req.params;
-
-  // Eliminar fisicamente
-  // const user = await User.findByIdAndDelete(id);
   const user = await User.findByIdAndUpdate(id, { state: false });
   res.json(user);
 };
