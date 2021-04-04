@@ -1,5 +1,5 @@
 const { response } = require('express');
-const User = require('../models/user');
+const { User } = require('../models');
 const { hash } = require('../helpers/crypto');
 
 const getUser = async (req, res = response) => {
@@ -26,26 +26,25 @@ const putUser = async (req, res = response) => {
   if (password) {
     userData.password = hash(password);
   }
-  const user = await User.findByIdAndUpdate(id, userData);
-  res.json(user);
-};
-
-const patchUser = (req, res = response) => {
-  res.json({
-    message: 'patch API',
+  const user = await User.findByIdAndUpdate(id, userData, {
+    new: true,
   });
+  res.json(user);
 };
 
 const deleteUser = async (req, res = response) => {
   const { id } = req.params;
-  const user = await User.findByIdAndUpdate(id, { state: false });
+  const user = await User.findByIdAndUpdate(
+    id,
+    { state: false },
+    { new: true }
+  );
   res.json(user);
 };
 
 module.exports = {
   deleteUser,
   getUser,
-  patchUser,
   postUser,
   putUser,
 };

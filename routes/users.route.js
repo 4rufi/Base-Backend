@@ -1,12 +1,6 @@
 const { Router } = require('express');
 const { check } = require('express-validator');
-const {
-  deleteUser,
-  getUser,
-  patchUser,
-  postUser,
-  putUser,
-} = require('../controllers/users');
+const { deleteUser, getUser, postUser, putUser } = require('../controllers');
 const {
   isValidRole,
   existEmail,
@@ -57,7 +51,5 @@ router.delete(
   ],
   deleteUser
 );
-
-router.patch('/', patchUser);
 
 module.exports = router;

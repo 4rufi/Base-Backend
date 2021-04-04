@@ -1,6 +1,6 @@
 const { response } = require('express');
 const jwt = require('jsonwebtoken');
-const User = require('../models/user');
+const { User } = require('../models');
 
 const validateJWT = async (req, res = response, next) => {
   const token = req.header('x-token');
@@ -15,7 +15,7 @@ const validateJWT = async (req, res = response, next) => {
 
     next();
   } catch (error) {
-    console.log(error);
+    console.log('error', error);
     res.status(401).json({ message: 'Token not valid' });
   }
 };

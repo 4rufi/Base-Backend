@@ -5,8 +5,13 @@ class Server {
   constructor() {
     this.app = express();
     this.port = process.env.PORT;
-    this.usersRoutePath = '/api/users';
-    this.authPath = '/api/auth';
+    this.paths = {
+      auth: '/api/auth',
+      categories: '/api/categories',
+      find: '/api/find',
+      products: '/api/products',
+      users: '/api/users',
+    };
     // Connect DB
     this.dbConnect();
 
@@ -26,8 +31,11 @@ class Server {
     this.app.use(express.static('public'));
   }
   routes() {
-    this.app.use(this.authPath, require('../routes/auth.route.js'));
-    this.app.use(this.usersRoutePath, require('../routes/user.route'));
+    this.app.use(this.paths.auth, require('../routes/auth.route.js'));
+    this.app.use(this.paths.categories, require('../routes/categories.route'));
+    this.app.use(this.paths.find, require('../routes/find.route'));
+    this.app.use(this.paths.products, require('../routes/products.route'));
+    this.app.use(this.paths.users, require('../routes/users.route'));
   }
 
   listen() {

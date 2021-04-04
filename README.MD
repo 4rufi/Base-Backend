@@ -20,6 +20,10 @@ and run start command
 $ npm run start
 ```
 
+## Postman
+
+https://documenter.getpostman.com/view/13397841/TzCQZm32
+
 ## License
 
 ISC © [Andy Au](https://github.com/4rufi/Base-Backend)

@@ -1,6 +1,5 @@
 const express = require('express');
-const user = require('../models/user');
-const User = require('../models/user');
+const { User } = require('../models');
 const { validatePass, generateJWT } = require('../helpers/crypto');
 const { googleVerify } = require('../helpers/verifyGoogle');
 const login = async (req, res = response) => {
@@ -17,7 +16,6 @@ const login = async (req, res = response) => {
 
     // Verificar la contraseña
     const validPassword = validatePass(password, user.password);
-    console.log(validPassword);
     if (!validPassword)
       return res
         .status(400)

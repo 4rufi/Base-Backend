@@ -1,19 +1,9 @@
-// {
-//   name: String,
-//   email: String,
-//   password: String,
-//   img: String,
-//   role: String,
-//   state: boolean,
-//   google: boolean,
-// }
-
 const { Schema, model } = require('mongoose');
 
 const UserSchema = Schema({
   name: {
     type: String,
-    required: [true, 'Name is required'],
+    required: [true, 'name is required'],
   },
   email: {
     type: String,
