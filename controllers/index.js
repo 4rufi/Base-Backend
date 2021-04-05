@@ -3,6 +3,7 @@ const categories = require('./categories');
 const products = require('./products');
 const users = require('./users');
 const find = require('./find');
+const uploads = require('./uploads');
 
 module.exports = {
   ...auth,
@@ -10,4 +11,5 @@ module.exports = {
   ...find,
   ...products,
   ...users,
+  ...uploads,
 };

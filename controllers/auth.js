@@ -1,7 +1,6 @@
 const express = require('express');
 const { User } = require('../models');
-const { validatePass, generateJWT } = require('../helpers/crypto');
-const { googleVerify } = require('../helpers/verifyGoogle');
+const { validatePass, generateJWT, googleVerify } = require('../helpers');
 const login = async (req, res = response) => {
   const { email, password } = req.body;
   try {

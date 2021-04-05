@@ -19,7 +19,6 @@ router.post(
 router.post(
   '/google',
   [check('id_token', 'id_token is required').not().isEmpty(), validateFields],
-
   googleSignIn
 );
 

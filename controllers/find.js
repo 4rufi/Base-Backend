@@ -4,7 +4,7 @@ const {
   findCategories,
   findProducts,
   findProductByCat,
-} = require('../helpers/finders');
+} = require('../helpers');
 
 const allowedCollections = ['categories', 'products', 'roles', 'users'];
 

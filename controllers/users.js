@@ -1,6 +1,6 @@
 const { response } = require('express');
 const { User } = require('../models');
-const { hash } = require('../helpers/crypto');
+const { hash } = require('../helpers');
 
 const getUser = async (req, res = response) => {
   const { limit = 5, from = 0 } = req.query;

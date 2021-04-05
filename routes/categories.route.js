@@ -12,7 +12,7 @@ const {
   updateCategory,
   deleteCategory,
 } = require('../controllers');
-const { existCategoryId } = require('../helpers/dbValidators');
+const { existCategoryId } = require('../helpers');
 
 const router = Router();
 

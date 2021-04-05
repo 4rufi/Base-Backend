@@ -12,7 +12,7 @@ const {
   updateProduct,
   deleteProduct,
 } = require('../controllers');
-const { existProductId, existCategoryId } = require('../helpers/dbValidators');
+const { existProductId, existCategoryId } = require('../helpers');
 
 const router = Router();
 
